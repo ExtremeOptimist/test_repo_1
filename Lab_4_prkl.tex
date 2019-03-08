@@ -1,0 +1,139 @@
+\documentclass[norsk,10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[norsk]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\author{Bjørnar Størksen Wiik}
+\title{Lab 4 protokoll}
+
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\fancyhead{}
+%\fancyhead[]{Lab 2 del 2}
+%\fancyfoot{}
+%\fancyfoot[]{side av \thepage}
+%\fancyfoot[]{Chapter \thechapter}
+
+
+\begin{document}
+	\tableofcontents
+	
+	\section{Hensikt}
+	Lab 4 går ut på å bli kjent med ociloskop, og måling av vekselstrø kretser.
+	
+	\section{Utstyrsliste}
+	Resistanser: 	0,6 W motstander av forskjellige verdier. \newline
+	Voltmeter:		1 stk Fluke 179 true RMS DMM	\newline
+	Amperemeter:	1 stk Fluke 179 true RMS DMM	\newline
+	Ociloskop
+	
+	\section{1}
+	\subsection{a}
+	
+	\subsection{b}
+	\begin{tabular}{|c|c|c|c|}
+		\hline 
+		$R1=R2=1 k \Omega$  & amplitude UR2 teoretisk [V] & amplitude UR2 \ målt [V] & målefeil \% \\ 
+		\hline 
+		probe x1 & 2.5 & 2.57 & 2.8 \% \\ 
+		\hline 
+		probe x10 & 0.25 & 0.257 & 2.8 \% \\ 
+		\hline 
+	\end{tabular} 
+	
+	\begin{tabular}{|c|c|c|c|}
+		\hline 
+		$R1=R2=1 M \Omega$  & amplitude UR2 \ teoretisk [V] & amplitude UR2 \ målt [V] & målefeil \% \\ 
+		\hline 
+		probe x1 & 2.5 & 1.71 & 31.6\% \\ 
+		\hline 
+		probe x10 & 0.25 & 0.253 & 2.8 \% \\ 
+		\hline 
+	\end{tabular} 	
+		
+	\subsection{1d}
+	
+		\begin{figure} [H]
+		\centering
+		\includegraphics[width=1\linewidth]{Bilder_2/scope_1}
+		\caption{Oppg 1c. Bilde av hva som skjer når man bytter til kanal 2, etter at
+		trigging er korrekt for 1. Får forskjellige bilder av spenningen, hver gang}
+		\label{fig:scope1}
+	\end{figure}
+
+	\begin{figure} [H]
+		\centering
+		\includegraphics[width=1\linewidth]{Bilder_2/scope_3}
+		\caption{Oppg 1d. Bilde av at toppene skjer samtidig, når begge probene måler over 1 k ohm. Men spenning 2, er halvparten av 1.}
+		\label{fig:scope3}
+	\end{figure}
+	
+	\begin{figure} [H]
+		\centering
+		\includegraphics[width=1\linewidth]{Bilder_2/scope_4}
+		\caption{Oppg 1d. Viser faseforskyvning, når man bytter en motstand med en kondensator.}
+		\label{fig:scope4}
+	\end{figure}
+	
+	\begin{figure} [H]
+		\centering
+		\includegraphics[width=1\linewidth]{Bilder_2/scope_5}
+		\caption{Oppg 2a.
+			Viser at vi måler +10, og minus 10 volt, og spenningen går som en rett linje.}
+		\label{fig:scope5}
+	\end{figure}
+	
+	Sjekk av figur \ref{fig:scope6}, roten av 2.
+	kalkulert roten av 2 = 1.4142.
+	kalkulert av graf:
+	$\frac{makx}{acRMS} = \frac{2.93}{2} = 1.4650$
+	
+	\begin{figure} [H]
+		\centering
+		\includegraphics[width=1\linewidth]{Bilder_2/scope_6}
+		\caption{Oppg 2b. viser amplitude og RMS.
+			Frekvens 1 k hz, periode var 1 ms.}
+		\label{fig:scope6}
+	\end{figure}
+	
+	\begin{figure} [H]
+		\centering
+		\includegraphics[width=1\linewidth]{Bilder_2/scope_7}
+		\caption{Oppg 2c. Bilde av firkant signal.}
+		\label{fig:scope7}
+	\end{figure}
+	
+	\begin{figure} [H]
+		\centering
+		\includegraphics[width=1\linewidth]{Bilder_2/scope_8}
+		\caption{Oppg 2c. Trigge tid til firkantspenningen på signalgenerator inni osioloskop.}
+		\label{fig:scope8}
+	\end{figure}
+	
+	\begin{figure} [H]
+		\centering
+		\includegraphics[width=1\linewidth]{Bilder_2/scope_11}
+		\caption{Oppg 2d. Viser at spennig med dc og ac, gir pulserende likespenning, 
+			altså sinus kurve, men går aldri under 0, null ca. midt på skjermen. Multimeteret viste 2 VDC}
+		\label{fig:scope11}
+	\end{figure}
+	
+	\begin{figure} [H]
+		\centering
+		\includegraphics[width=1\linewidth]{Bilder_2/scope_12}
+		\caption{Oppg 2e. viser p-p 5, volt, firkantspenning.}
+		\label{fig:scope12}
+	\end{figure}
+	
+	\begin{figure} [H]
+		\centering
+		\includegraphics[width=1\linewidth]{Bilder_2/scope_15}
+		\caption{Oppg 3. viser beregnet tidskonstant, fra 10 til 6 v.}
+		\label{fig:scope15}
+	\end{figure}
+	
+	
+\end{document}
