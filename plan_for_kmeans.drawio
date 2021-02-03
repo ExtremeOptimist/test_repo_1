@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-03T09:25:41.128Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Safari/537.36" etag="fcQCTwbuqeDDq1U4JUYc" version="14.2.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-02-03T12:47:17.791Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Safari/537.36" etag="Z8hVSTWs05p3LiFv7oU5" version="14.2.9" type="github">
   <diagram id="BIdMPh4TAkIy-gXU7hwF" name="Page-1">
     <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -12,6 +12,9 @@
         </mxCell>
         <mxCell id="6CO3RHqaUK-Ui07NZQhR-3" value="Finne ut hvilke koralldel som mangler" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="520" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6CO3RHqaUK-Ui07NZQhR-4" value="Vil at hver 10 skal være centroide." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="510" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
