@@ -1,13 +1,13 @@
-<mxfile host="app.diagrams.net" modified="2021-02-12T15:38:20.598Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36" etag="dR7Znn-r98-YQeYg0Rfi" version="14.3.1" type="github">
+<mxfile host="app.diagrams.net" modified="2021-02-14T10:13:26.320Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36" etag="ERqy52d2hsxcyV7syuWE" version="14.3.1" type="github">
   <diagram id="W-XjO6lS5ifQV8LYXLU5" name="Page-1">
-    <mxGraphModel dx="700" dy="748" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2489" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="VRuH1pvmXJRrElLr02zH-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="MudVOC_LyHgyW86bBqMA-3" target="MudVOC_LyHgyW86bBqMA-4">
+        <mxCell id="VRuH1pvmXJRrElLr02zH-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="MudVOC_LyHgyW86bBqMA-3" target="MudVOC_LyHgyW86bBqMA-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="VRuH1pvmXJRrElLr02zH-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="MudVOC_LyHgyW86bBqMA-3" target="MudVOC_LyHgyW86bBqMA-6">
+        <mxCell id="VRuH1pvmXJRrElLr02zH-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="MudVOC_LyHgyW86bBqMA-3" target="MudVOC_LyHgyW86bBqMA-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="MudVOC_LyHgyW86bBqMA-3" value="Etikk ved Krig&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -16,7 +16,7 @@
         <mxCell id="MudVOC_LyHgyW86bBqMA-4" value="Personer" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="10" y="350" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="VRuH1pvmXJRrElLr02zH-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="MudVOC_LyHgyW86bBqMA-6" target="MudVOC_LyHgyW86bBqMA-8">
+        <mxCell id="VRuH1pvmXJRrElLr02zH-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="MudVOC_LyHgyW86bBqMA-6" target="MudVOC_LyHgyW86bBqMA-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="MudVOC_LyHgyW86bBqMA-6" value="Metoder" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -24,6 +24,30 @@
         </mxCell>
         <mxCell id="MudVOC_LyHgyW86bBqMA-8" value="Atomkrig" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="350" y="470" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4cT1354pfiAyZwbUqg14-1" value="En essey består av 5&amp;nbsp; enheter." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="590" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="4cT1354pfiAyZwbUqg14-2" value="1.&lt;br&gt;Introduksjon" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="640" width="500" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4cT1354pfiAyZwbUqg14-3" value="5.&amp;nbsp;&lt;br&gt;Konklusjon. Ikke inkluder noe nytt. Oppsumer alt i i del 2, 3 og 4." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="1310" width="500" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="4cT1354pfiAyZwbUqg14-4" value="2.&lt;br&gt;Grunner til krig. Kan og være &lt;br&gt;hovedgrunner for og imot." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="710" width="500" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="4cT1354pfiAyZwbUqg14-6" value="3.&amp;nbsp;&lt;br&gt;Grunner til ikke krig. Kan og være undergrunner for og imot." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="850" width="500" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="4cT1354pfiAyZwbUqg14-7" value="4.&amp;nbsp;&lt;br&gt;&quot;crunch&quot; Største kapittel der man forklarer sin synsvinkel, &lt;br&gt;metodisk faktabasert, med andre sine tanker.&lt;br&gt;Ideer som man har og har lært av emnet." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="1000" width="500" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="4cT1354pfiAyZwbUqg14-9" value="Bruke &quot;quotation&quot; sitater.&lt;br&gt;Må etablres, brukes, forklares rundt" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-330" y="720" width="220" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="4cT1354pfiAyZwbUqg14-10" value="Bruke &quot;quotation&quot; sitater.&lt;br&gt;Må etablres, brukes, forklares rundt" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="640" width="160" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
