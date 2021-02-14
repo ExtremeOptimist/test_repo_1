@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-14T10:14:31.622Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36" etag="Ka0s6StJzKRuDt_A9zVN" version="14.3.1" type="github">
+<mxfile host="app.diagrams.net" modified="2021-02-14T10:42:28.157Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36" etag="pVCnn4RtIPf4IpxH65Zq" version="14.3.1" type="github">
   <diagram id="W-XjO6lS5ifQV8LYXLU5" name="Page-1">
     <mxGraphModel dx="2489" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -47,7 +47,19 @@
           <mxGeometry x="-330" y="720" width="220" height="170" as="geometry" />
         </mxCell>
         <mxCell id="4cT1354pfiAyZwbUqg14-10" value="Bruke &quot;quotation&quot; sitater.&lt;br&gt;Må etablres, brukes, forklares rundt" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="900" y="640" width="160" height="60" as="geometry" />
+          <mxGeometry x="40" y="770" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4cT1354pfiAyZwbUqg14-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4cT1354pfiAyZwbUqg14-11" target="4cT1354pfiAyZwbUqg14-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4cT1354pfiAyZwbUqg14-11" value="Ikke bruk lang tid på finne ut hva du skla skrive i introduksjonen. det er ikke myer orginalt du kan skrive.&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="410" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="4cT1354pfiAyZwbUqg14-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="4cT1354pfiAyZwbUqg14-14" target="4cT1354pfiAyZwbUqg14-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4cT1354pfiAyZwbUqg14-14" value="Bruk introduksjonen til å skrive innlede tekseten slik at du vil at den skal bli lest." style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="520" width="140" height="85" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
