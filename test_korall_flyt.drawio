@@ -1,44 +1,125 @@
-<mxfile host="app.diagrams.net" modified="2021-01-27T12:55:25.819Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="5olzX-_JWAjV7mfN5bb5" version="14.2.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-10T08:09:23.430Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36" etag="kwal9DPEgDEHG_lf6jjX" version="14.4.6" type="github">
   <diagram id="ZGgq6k-ltOVmovlfIZoH" name="Page-1">
-    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="981" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="SkGkPnIFWxc_dyA8LWUv-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="SkGkPnIFWxc_dyA8LWUv-1" target="SkGkPnIFWxc_dyA8LWUv-9">
+        <mxCell id="SkGkPnIFWxc_dyA8LWUv-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="SkGkPnIFWxc_dyA8LWUv-1" target="SkGkPnIFWxc_dyA8LWUv-9" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="SkGkPnIFWxc_dyA8LWUv-1" value="Ta inn nytt bilde" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="SkGkPnIFWxc_dyA8LWUv-1" value="Ta inn nytt bilde" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="30" y="250" width="180" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="SkGkPnIFWxc_dyA8LWUv-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.544;entryY=0.017;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="SkGkPnIFWxc_dyA8LWUv-2" target="SkGkPnIFWxc_dyA8LWUv-4">
+        <mxCell id="SkGkPnIFWxc_dyA8LWUv-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.544;entryY=0.017;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="SkGkPnIFWxc_dyA8LWUv-2" target="SkGkPnIFWxc_dyA8LWUv-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="SkGkPnIFWxc_dyA8LWUv-2" value="Ta inn referanse bilde&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="SkGkPnIFWxc_dyA8LWUv-2" value="Ta inn referanse bilde&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="30" y="60" width="180" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="SkGkPnIFWxc_dyA8LWUv-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="SkGkPnIFWxc_dyA8LWUv-3" target="SkGkPnIFWxc_dyA8LWUv-4">
+        <mxCell id="SkGkPnIFWxc_dyA8LWUv-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="SkGkPnIFWxc_dyA8LWUv-3" target="SkGkPnIFWxc_dyA8LWUv-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="SkGkPnIFWxc_dyA8LWUv-3" value="Ta inn templates &lt;br&gt;(som hører til referansebilde)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="SkGkPnIFWxc_dyA8LWUv-3" value="Ta inn templates &lt;br&gt;(som hører til referansebilde)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="30" y="150" width="180" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="SkGkPnIFWxc_dyA8LWUv-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="SkGkPnIFWxc_dyA8LWUv-4" target="SkGkPnIFWxc_dyA8LWUv-15">
+        <mxCell id="SkGkPnIFWxc_dyA8LWUv-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="SkGkPnIFWxc_dyA8LWUv-4" target="SkGkPnIFWxc_dyA8LWUv-15" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="SkGkPnIFWxc_dyA8LWUv-4" value="Hent ut kontur av bilde" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="SkGkPnIFWxc_dyA8LWUv-4" value="Hent ut kontur av bilde" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="400" y="250" width="160" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="SkGkPnIFWxc_dyA8LWUv-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="SkGkPnIFWxc_dyA8LWUv-9" target="SkGkPnIFWxc_dyA8LWUv-4">
+        <mxCell id="SkGkPnIFWxc_dyA8LWUv-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="SkGkPnIFWxc_dyA8LWUv-9" target="SkGkPnIFWxc_dyA8LWUv-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="SkGkPnIFWxc_dyA8LWUv-9" value="Skalere til referanse&amp;nbsp;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="SkGkPnIFWxc_dyA8LWUv-9" value="Skalere til referanse&amp;nbsp;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="240" y="250" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="SkGkPnIFWxc_dyA8LWUv-15" value="Bruk template matching" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="SkGkPnIFWxc_dyA8LWUv-15" value="Bruk template matching" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="420" y="360" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="SkGkPnIFWxc_dyA8LWUv-17" value="Kontur" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="340" y="460" width="120" height="60" as="geometry" />
+        <mxCell id="SkGkPnIFWxc_dyA8LWUv-17" value="Kontur" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="620" y="326" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p8cAAoTmblI4a2AUB24l-2" target="p8cAAoTmblI4a2AUB24l-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-2" value="Object.remove()" style="ellipse;whiteSpace=wrap;html=1;fillColor=#6d8764;strokeColor=#3A5431;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="890" y="160" width="170" height="49" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p8cAAoTmblI4a2AUB24l-4" target="p8cAAoTmblI4a2AUB24l-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-4" value="Maskerer ut de blå linjene" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="905.25" y="242" width="139.5" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="p8cAAoTmblI4a2AUB24l-7" target="p8cAAoTmblI4a2AUB24l-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="p8cAAoTmblI4a2AUB24l-7" target="p8cAAoTmblI4a2AUB24l-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-7" value="&lt;br&gt;Er linjene så&lt;br&gt;lange de skal&lt;br&gt;&amp;nbsp;være?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;fontColor=#ffffff;strokeColor=#B09500;fillColor=#e3c800;align=center;" vertex="1" parent="1">
+          <mxGeometry x="927.25" y="392.05" width="95.5" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p8cAAoTmblI4a2AUB24l-9" target="p8cAAoTmblI4a2AUB24l-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-9" value="Finn de to største konturene&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="905.25" y="330.5" width="139.5" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p8cAAoTmblI4a2AUB24l-11" target="p8cAAoTmblI4a2AUB24l-9">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1178.2499999999995" y="268.6321874158136" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1132.5" y="300" />
+              <mxPoint x="975.5" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-11" value="Koble sammen brutte linjer ved hjelp av morfologisk åpning" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1062.5" y="326" width="139.5" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-12" value="&amp;nbsp;Nei" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="1022.75" y="425" width="31" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-13" value="Ja" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="977.5" y="489.25" width="23" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="p8cAAoTmblI4a2AUB24l-15" target="p8cAAoTmblI4a2AUB24l-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-15" value="Finner minste omkransende rektangel for hver av de blå linjene" style="whiteSpace=wrap;html=1;rounded=0;fontColor=#ffffff;strokeColor=#B09500;fillColor=#e3c800;" vertex="1" parent="1">
+          <mxGeometry x="915" y="524" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="p8cAAoTmblI4a2AUB24l-17" target="p8cAAoTmblI4a2AUB24l-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-17" value="Fra de blå linjenes omkransende rektangel finner&amp;nbsp; vi hjørnepunktene som omkranser ROI&amp;nbsp;" style="whiteSpace=wrap;html=1;rounded=0;fontColor=#ffffff;strokeColor=#B09500;fillColor=#e3c800;" vertex="1" parent="1">
+          <mxGeometry x="915" y="617.25" width="120.5" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p8cAAoTmblI4a2AUB24l-19" target="p8cAAoTmblI4a2AUB24l-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-19" value="Bruker perstektiv-&lt;br&gt;transformasjon til å rette opp ROI" style="whiteSpace=wrap;html=1;rounded=0;fontColor=#ffffff;strokeColor=#B09500;fillColor=#e3c800;" vertex="1" parent="1">
+          <mxGeometry x="915" y="734" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-20" value="Returner" style="ellipse;whiteSpace=wrap;html=1;fillColor=#6d8764;strokeColor=#3A5431;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="894.5" y="834" width="161" height="49" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-21" value="Henter ut kontur" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="200.5" y="680" width="139.5" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-22" value="Legger til mal bilder" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="200" y="595" width="139.5" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-23" value="Setter referanse bilde" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="200.5" y="762" width="139.5" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-24" value="Henter ut kontur" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="200.5" y="883" width="139.5" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p8cAAoTmblI4a2AUB24l-25" value="Henter ut bokser som samsvarer med malene" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="200.5" y="950" width="139.5" height="32" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
