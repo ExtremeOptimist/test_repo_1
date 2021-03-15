@@ -250,18 +250,19 @@ def find_non_overlap(objects_before, objects_after, non_max_suppression_threshol
 # ============================================================================
 if __name__ == '__main__':
     templater = []
-    templater.append(Template('ut_2.png', 0.65))
-    template.set_contour()
+    templater.append(Template('./korallrev/templates/ut_2.png', 0.65))
+    for template in templater:
+        template.set_contour()
     # img1 = cv2.imread('mob_for.jpg.png')
     # img2 = cv2.imread('mob_etter.jpg.jpg')
-    kfor = ObjectTotal('ref_images\mob_for.jpg')
+    kfor = ObjectTotal('./korallrev/ref_images/korallrev_for.PNG')
     kfor.set_contour()  # setter contouren til formen av korallrevet
     # matcher templates og filtrere overlapp, returnerer en liste med deler.
     bokser_for = kfor.template_match(templater, 0.01)
     for_med_rektangler = kfor.draw_rectangles(bokser_for)  # returnerer objektbildet med valgte deler
 
 
-    ketr = ObjectTotal('mob_etter.jpg')
+    ketr = ObjectTotal('./korallrev/ref_images/korallrev_etter.png')
     ketr.set_contour()  # ikke fornøyd med "set contour" som metode navn
     #cont_scal = ketr.resize_to_image(kfor.image)
     bokser_etter = ketr.template_match(templater, 0.01)
