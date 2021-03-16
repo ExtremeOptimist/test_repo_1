@@ -39,10 +39,6 @@ def create_app(test_config=None):
     def hello():
         return 'Hello, World!'
     
-    @app.route('/images')
-    def images():
-        return 'image'
-    
     # Database kapittel
     from . import db
     db.init_app(app)
@@ -55,5 +51,9 @@ def create_app(test_config=None):
     from . import blog
     app.register_blueprint(blog.bp)
     app.add_url_rule('/', endpoint='index')
+
+    # legg in images url, alstå /images
+    from . import images
+    app.register_blueprint(images.bp)
 
     return app
