@@ -20,6 +20,12 @@
         {% endif %}
       </header>
       <p class="body">{{ post['body'] }}</p>
+ 
+      <!-- BUTTON THAT TAKES YOU TO AN IMAGE --> 
+      <form action="{{url_for('/images.video_feed')}}">
+        <input type="submit" value="IMAGES">
+      </form>
+
     </article>
     {% if not loop.last %}
       <hr>
