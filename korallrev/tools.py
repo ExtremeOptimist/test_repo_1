@@ -4,14 +4,15 @@ import matplotlib.pyplot as plt
 
 
 class ObjectTotal:
-    def __init__(self, image_path):
+    def __init__(self, image):
         # Hva hvert korallrev trenger
-        self.image = cv2.imread(image_path)
+        self.image = image
         # assert self.image is not None  # check if image is loaded
         self.image_contour = None
         self.image_copy = self.image.copy()
         self.parts = []  # liste med deler av korallrevet
         self.f_parts = []  # filtrert liste
+        self.with_bokses = None
 
     def set_contour(self):
         self.image_contour, self.image = extract_color(self.image)
@@ -23,9 +24,11 @@ class ObjectTotal:
 
     def template_match(self, templates, filter_threshold=0.1):
         # Tar inn en eller flere templates
+        gray = lilla_contour(self.image)
         for template_ in templates:
-            match = cv2.matchTemplate(self.image_contour, template_.image_contour, cv2.TM_CCOEFF_NORMED)
-            above = np.where(match >= template.matching_threshold)
+            tmplgray = cv2.cvtColor(template_.image, cv2.COLOR_BGR2GRAY)
+            match = cv2.matchTemplate(gray, tmplgray, cv2.TM_CCOEFF_NORMED)
+            above = np.where(match >= template_.matching_threshold)
             for (x, y) in zip(above[1], above[0]):
                 # Lager et del objekt for hver match over terskelen
                 self.parts.append(ObjectPart(x, y, x+template_.width, y+template_.height,
@@ -44,17 +47,10 @@ class ObjectTotal:
                 image,
                 (part_.ulx, part_.uly),
                 (part_.brx, part_.bry),
-                part_.col, 7)
+                part_.col, 2)
+        self.with_bokses = image
         return image
 
-    def resize_to_image(self, image_ref):
-        img_scaled = cv2.resize(self.image_contour,
-                                (image_ref.shape[1], image_ref.shape[0]), interpolation=cv2.INTER_AREA)
-        img_org_scaled = cv2.resize(self.image,
-                                (image_ref.shape[1], image_ref.shape[0]), interpolation=cv2.INTER_AREA)
-        self.image_contour = img_scaled
-        self.image = img_org_scaled
-        return img_scaled
 
     def check_white_parts(self, list_of_parts):
         if list_of_parts is not []:
@@ -71,11 +67,19 @@ class ObjectTotal:
                 # cv2.waitKey(0)
                 # cv2.destroyAllWindows()
         return True
+    
+    def show(self, with_bokses=False):
+        plt.figure()
+        if with_bokses:
+            plt.imshow(self.with_bokses)
+        else:
+            plt.imshow(self.image)
+        # plt.show()
 
 
 class Template:
-    def __init__(self, image_path, matching_threshold):
-        self.image = cv2.imread(image_path)
+    def __init__(self, image, matching_threshold):
+        self.image = image
         self.matching_threshold = matching_threshold
         self.height, self.width, self.depth = self.image.shape
         self.image_contour = None
@@ -153,6 +157,52 @@ def crop_image(image, rectangle_coords):
     wd = int(rectangle_coords[2] + (0.05 * image.shape[0]))
     he = rectangle_coords[3]
     return image[sy:sy + he, sx:sx + wd]
+
+
+def compute_iou(a, b):
+    # Tar inn to rektangler,
+    # a, b = [x1, y1, x2, y2]
+    # og regner ut prosentvis overlapp
+    # 0 = 0 % 0.5 = 50 % 1 = 100 %
+    epsilon = 1e-5
+
+    x1 = max(a[0], b[0])
+    y1 = max(a[1], b[1])
+    x2 = min(a[2], b[2])
+    y2 = min(a[3], b[3])
+
+    width = (x2 - x1)  # Area of intersection
+    height = (y2 - y1)
+
+    # handle case where there is NO overlap
+    if (width < 0) or (height < 0):
+        return 0.0
+    area_overlap = width * height
+
+    # COMBINED AREA
+    area_a = (a[2] - a[0]) * (a[3] - a[1])
+    area_b = (b[2] - b[0]) * (b[3] - b[1])
+    area_combined = area_a + area_b - area_overlap
+
+    # RATIO OF AREA OF OVERLAP OVER COMBINED AREA
+    iou = area_overlap / (area_combined + epsilon)
+    return iou
+
+
+def filter_overlap(list_of_parts, threshold):
+    # Filtrerer bokser som overlapper over en terskel
+    non_overlapping = []
+    for obj in list_of_parts:
+        overlap = False
+        for f_obj in non_overlapping:
+            iou = compute_iou(obj.get_rectangle(), f_obj.get_rectangle())  # se funskjon "compute iou"
+            if iou > threshold:
+                overlap = True
+                break
+        if not overlap:
+            non_overlapping.append(obj)
+    # print(f'Antall som ikke overlapper: {len(non_overlapping)}')
+    return non_overlapping
 
 
 if __name__ == '__main__':
