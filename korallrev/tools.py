@@ -68,10 +68,13 @@ class ObjectTotal:
                 # cv2.destroyAllWindows()
         return True
     
-    def show(self, with_bokses=False):
+    def show(self, with_bokses=False, kontur=False):
         plt.figure()
         if with_bokses:
             plt.imshow(self.with_bokses)
+        elif kontur:
+            gray = lilla_contour(self.image)
+            plt.imshow(gray)
         else:
             plt.imshow(self.image)
         # plt.show()
@@ -86,6 +89,10 @@ class Template:
 
     def set_contour(self):
         self.image_contour, a = extract_color(self.image, crop=False)
+
+    def show(self):
+        plt.figure()
+        plt.imshow(self.image)
 
 
 class ObjectPart:
@@ -148,7 +155,7 @@ def biggest_contour_roi(gray_img):
     contours, hierarchy = cv2.findContours(gray_img, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     biggest_cont = max(contours, key=cv2.contourArea)
     bounding_rect = cv2.boundingRect(biggest_cont)
-    return bounding_rect
+    return bounding_rect, biggest_cont
 
 
 def crop_image(image, rectangle_coords):
