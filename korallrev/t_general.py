@@ -22,7 +22,8 @@ prep_img_for = cv2.resize(roi, SHAPE, interpolation=cv2.INTER_AREA)
 
 # Tilpass bildet etter
 # im = cv2.imread('./korallrev/ref_images/mob_etter.jpg')
-im = cv2.imread('./korallrev/ref_images/korallrev_etter_innsyn_vink_10.png')
+# im = cv2.imread('./korallrev/ref_images/korallrev_etter_innsyn_vink_10.png')
+im = cv2.imread('./korallrev/ref_images/korallrev_etter.png')
 kontur = tools.lilla_contour(im)  # Bare lilla områder
 # plt.figure()
 # plt.imshow(kontur)
@@ -45,26 +46,27 @@ tmp1 = tools.Template(tmp1, 0.5)
 # tmp1.show()
 
 kfor = tools.ObjectTotal(prep_img_for)
-kfor.show(kontur=True)
+# kfor.show(kontur=True)
 bfor = kfor.template_match([tmp1], filter_threshold=0.1)
 kfor_bokses = kfor.draw_rectangles(bfor)
 kfor.show(with_bokses=True)
 
 ketr = tools.ObjectTotal(prep_img_etr)
-ketr.show(kontur=True)
+# ketr.show(kontur=True)
 betr = ketr.template_match([tmp1], filter_threshold=0.1)
 ketr_bokses = ketr.draw_rectangles(betr)
 ketr.show(with_bokses=True)
 
-# bokses1 = tmpl.visualize(prep_img, matches)
-# plt.figure()
-# plt.imshow(bokses1)
+diff_bokses = tools.find_non_overlap(bfor, betr)
 
-# matches2 = tmpl.non_max_suppression(matches, non_max_suppression_threshold=0.3)
-# bokses1 = tmpl.visualize(prep_img, matches2)
-# plt.figure()
-# plt.imshow(bokses1)
+kfor.set_before()
+tools.check_white_parts(prep_img_for, prep_img_etr, diff_bokses)
+for part in diff_bokses:
+    part.set_color()
 
+diff_etr = ketr.draw_rectangles(diff_bokses)
+plt.figure()
+plt.imshow(diff_etr)
 
 plt.show()
 

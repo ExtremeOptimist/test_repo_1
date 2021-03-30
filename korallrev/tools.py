@@ -50,23 +50,6 @@ class ObjectTotal:
                 part_.col, 2)
         self.with_bokses = image
         return image
-
-
-    def check_white_parts(self, list_of_parts):
-        if list_of_parts is not []:
-            for part_ in list_of_parts:
-                roi = self.image[part_.uly:part_.bry, part_.ulx:part_.brx, :]
-                sum_all = np.sum(roi[:, :, :])
-                pixel_brightness = sum_all / (roi.shape[0] * roi.shape[1])
-                if pixel_brightness > 450:
-                    part_.wht = True
-                else:
-                    part_.wht = False
-                print(f'Pixel whitenes = {pixel_brightness}\nIs white = {part_.wht}')
-                # cv2.imshow('hvit', roi)
-                # cv2.waitKey(0)
-                # cv2.destroyAllWindows()
-        return True
     
     def show(self, with_bokses=False, kontur=False):
         plt.figure()
@@ -108,7 +91,8 @@ class ObjectPart:
         self.mav = matching_value
         self.col = color
         self.new = new
-        self.wht = white
+        self.blc = False
+        self.hld = False
         ObjectPart.__id += 1
         self._id = ObjectPart.__id
 
@@ -119,15 +103,13 @@ class ObjectPart:
 
     def set_color(self):
         if self.new:  # new yes
-            if self.wht:  # wht yes
-                self.col = (255, 0, 0)  # bleaching, red
-            else:  # white no
-                self.col = (0, 255, 0)  # growth, green
+            self.col = (0, 255, 0)  # growth, green
         else:  # new no
-            if self.wht:  #
-                self.col = (0, 0, 255)  # recover, blue
-            else:
-                self.col = (255, 255, 0)  # death, yellow
+            self.col = (0, 255, 255)  # death, yellow
+        if self.hld:  #
+            self.col = (255, 0, 0)  # recover, blue
+        if self.blc:  # wht yes
+            self.col = (0, 0, 255)  # bleaching, red
         return True
 
     def __str__(self):
@@ -212,6 +194,61 @@ def filter_overlap(list_of_parts, threshold):
             non_overlapping.append(obj)
     # print(f'Antall som ikke overlapper: {len(non_overlapping)}')
     return non_overlapping
+
+
+def find_non_overlap(objects_before, objects_after, non_max_suppression_threshold=0.05):
+    filtered_objects = []
+    if len(objects_before) <= len(objects_after):
+        o_list_1 = objects_after
+        o_list_2 = objects_before
+    else:
+        o_list_1 = objects_before
+        o_list_2 = objects_after
+    combined = objects_before + objects_after
+    for o1 in combined:  # Går gjennom alle objekter
+        overlap_found = False  # Sier at man finner overlapp med en gang
+        for o2 in o_list_1:  # sjekker med alle objekter i liste 2
+            iou = compute_iou(o1.get_rectangle(), o2.get_rectangle())
+            # Regner ut iou for object og objekt som ikke har overlapp
+            if iou >= non_max_suppression_threshold:  # Hvis område er høyt betyr det at det er overlapp
+                overlap_found = True
+                break  # går ut av løkken hvis den finner overlapp
+        if not overlap_found:  # Hvis ingen hadde område overlapp, vil øverste loop objekt gå til filtrert listen
+            filtered_objects.append(o1)
+    for o1 in combined:  # Går gjennom alle objekter
+        overlap_found = False  # Sier at man finner overlapp med en gang
+        for o2 in o_list_2:  # sjekker med alle objekter i liste 2
+            iou = compute_iou(o1.get_rectangle(), o2.get_rectangle())
+            # Regner ut iou for object og objekt som ikke har overlapp
+            if iou >= non_max_suppression_threshold:  # Hvis område er høyt betyr det at det er overlapp
+                overlap_found = True
+                break  # går ut av løkken hvis den finner overlapp
+        if not overlap_found:  # Hvis ingen hadde område overlapp, vil øverste loop objekt gå til filtrert listen
+            filtered_objects.append(o1)
+    print(f'antall differanser: {len(filtered_objects)}')
+    return filtered_objects
+
+def is_area_white(roi):
+    roi = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
+    general_pixel_intensity = cv2.mean(roi)
+    if general_pixel_intensity[2] > 155:
+        result = True
+    else:
+        result = False
+    return result
+
+def check_white_parts(im_bef, im_aft, list_of_parts):
+    if list_of_parts is not []:
+        for part_ in list_of_parts:
+            roi1 = im_bef[part_.uly:part_.bry, part_.ulx:part_.brx, :]
+            roi2 = im_aft[part_.uly:part_.bry, part_.ulx:part_.brx, :]
+            a = is_area_white(roi1)
+            b = is_area_white(roi2)
+            if a and not b:
+                part_.hld = True
+            if b and not a:
+                part_.blc = True
+    return True
 
 
 if __name__ == '__main__':
