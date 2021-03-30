@@ -142,8 +142,10 @@ def lilla_contour(img):
     img_hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     # plt.figure()
     # plt.imshow(img_hsv)
-    color_low = np.array([hue[0], 30, 50])
-    color_high = np.array([hue[1], 220, 255])
+    # color_low = np.array([hue[0], 30, 50]) # bra for mob
+    # color_high = np.array([hue[1], 220, 255]) # bra for mob
+    color_low = np.array([hue[0], 60, 90])  # bra for MATE
+    color_high = np.array([hue[1], 200, 221])  # bra for MATE
     mask = cv2.inRange(img_hsv, color_low, color_high)
     res = cv2.bitwise_and(img, img, mask=mask)
     bare_h_lag = res[:, :, 0]
