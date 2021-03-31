@@ -14,9 +14,6 @@ class ObjectTotal:
         self.f_parts = []  # filtrert liste
         self.with_bokses = None
 
-    def set_contour(self):
-        self.image_contour, self.image = extract_color(self.image)
-
     def set_before(self):
         for part_ in self.f_parts:
             part_.new = False
@@ -32,7 +29,7 @@ class ObjectTotal:
             for (x, y) in zip(above[1], above[0]):
                 # Lager et del objekt for hver match over terskelen
                 self.parts.append(ObjectPart(x, y, x+template_.width, y+template_.height,
-                                             match[y, x], (0, 0, 0), True, False))
+                                             match[y, x], (0, 0, 0), True))
         filtered_parts = filter_overlap(self.parts, filter_threshold)
         for f_part_ in filtered_parts:
             self.f_parts.append(f_part_)
@@ -70,9 +67,6 @@ class Template:
         self.height, self.width, self.depth = self.image.shape
         self.image_contour = None
 
-    def set_contour(self):
-        self.image_contour, a = extract_color(self.image, crop=False)
-
     def show(self):
         plt.figure()
         plt.imshow(self.image)
@@ -83,7 +77,7 @@ class ObjectPart:
     # Hva hver del av korallrevet trenger
 
     def __init__(self, upper_left_x, upper_left_y,
-                 bottom_right_x, bottom_right_y, matching_value, color, new, white):
+                 bottom_right_x, bottom_right_y, matching_value, color, new):
         self.ulx = upper_left_x
         self.uly = upper_left_y
         self.brx = bottom_right_x
@@ -105,7 +99,7 @@ class ObjectPart:
         if self.new:  # new yes
             self.col = (0, 255, 0)  # growth, green
         else:  # new no
-            self.col = (0, 255, 255)  # death, yellow
+            self.col = (255, 255, 0)  # death, yellow
         if self.hld:  #
             self.col = (255, 0, 0)  # recover, blue
         if self.blc:  # wht yes
@@ -228,6 +222,7 @@ def find_non_overlap(objects_before, objects_after, non_max_suppression_threshol
     print(f'antall differanser: {len(filtered_objects)}')
     return filtered_objects
 
+
 def is_area_white(roi):
     roi = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
     general_pixel_intensity = cv2.mean(roi)
@@ -236,6 +231,7 @@ def is_area_white(roi):
     else:
         result = False
     return result
+
 
 def check_white_parts(im_bef, im_aft, list_of_parts):
     if list_of_parts is not []:
@@ -252,8 +248,7 @@ def check_white_parts(im_bef, im_aft, list_of_parts):
 
 
 if __name__ == '__main__':
-    templater = []
-    templater.append(Template('./korallrev/templates/5.jpg', 0.65))
+    templater = [Template('./korallrev/templates/5.jpg', 0.65)]
     # img1 = cv2.imread('mob_for.jpg.png')
     # img2 = cv2.imread('mob_etter.jpg.jpg')
     kfor = ObjectTotal('./korallrev/ref_images/korallrev_for.PNG')

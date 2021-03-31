@@ -1,17 +1,15 @@
 import cv2
-import numpy as np
 import matplotlib.pyplot as plt
-# import template_matching_sicara as tmpl
-import tools
+import korallrev.tools as tools
 
 SHAPE = (400, 400)
 
 # Tilpass bilde før. (kan gjøres til funksjon)
 # im = cv2.imread('./korallrev/ref_images/mob_etter.jpg')
-im = cv2.imread('./korallrev/ref_images/korallrev_for.png')
+im = cv2.imread('./ref_images/korallrev_for.png')
 kontur = tools.lilla_contour(im)  # Bare lilla områder
 # plt.figure()
-# plt.imshow(kontur)
+# plt.imshow(im)
 roi_coords, biggest_cont_ = tools.biggest_contour_roi(kontur)  # Korallrev bounding box
 # plt.figure()
 # plt.imshow(only_contour)
@@ -23,11 +21,11 @@ prep_img_for = cv2.resize(roi, SHAPE, interpolation=cv2.INTER_AREA)
 # Tilpass bildet etter
 # im = cv2.imread('./korallrev/ref_images/mob_etter.jpg')
 # im = cv2.imread('./korallrev/ref_images/korallrev_etter_innsyn_vink_10.png')
-im = cv2.imread('./korallrev/ref_images/korallrev_etter.png')
+im = cv2.imread('./ref_images/korallrev_etter.png')
 kontur = tools.lilla_contour(im)  # Bare lilla områder
 # plt.figure()
 # plt.imshow(kontur)
-roi_coords, biggest_cont_ = tools.biggest_contour_roi(kontur)  # Korallrev bounding box
+roi_coords, biggest_cont_2 = tools.biggest_contour_roi(kontur)  # Korallrev bounding box
 # plt.figure()
 # plt.imshow(only_contour)
 roi = tools.crop_image(im, roi_coords)  # klippet ut
@@ -41,7 +39,7 @@ prep_img_etr = cv2.resize(roi, SHAPE, interpolation=cv2.INTER_AREA)
 # plt.imshow(kont2)
 # cv2.imwrite('templates/cuttbar.jpg', kont2)
 
-tmp1 = cv2.imread('./korallrev/templates/6.jpg')
+tmp1 = cv2.imread('./templates/6.jpg')
 tmp1 = tools.Template(tmp1, 0.5)
 # tmp1.show()
 
@@ -69,4 +67,3 @@ plt.figure()
 plt.imshow(diff_etr)
 
 plt.show()
-
