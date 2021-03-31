@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 class ObjectTotal:
     def __init__(self, image):
         # Hva hvert korallrev trenger
+        # im = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) # kan forandre til RGB
         self.image = image
         # assert self.image is not None  # check if image is loaded
         self.image_contour = None
@@ -143,7 +144,11 @@ def biggest_contour_roi(gray_img):
 
 def crop_image(image, rectangle_coords):
     sx = int(rectangle_coords[0] - (0.05 * image.shape[0]))
+    if sx < 0:
+        sx = 0
     sy = rectangle_coords[1]
+    if sy < 0:
+        sy = 0
     wd = int(rectangle_coords[2] + (0.05 * image.shape[0]))
     he = rectangle_coords[3]
     return image[sy:sy + he, sx:sx + wd]

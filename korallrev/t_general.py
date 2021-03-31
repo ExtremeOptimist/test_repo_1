@@ -21,10 +21,11 @@ prep_img_for = cv2.resize(roi, SHAPE, interpolation=cv2.INTER_AREA)
 # Tilpass bildet etter
 # im = cv2.imread('./korallrev/ref_images/mob_etter.jpg')
 # im = cv2.imread('./korallrev/ref_images/korallrev_etter_innsyn_vink_10.png')
-im = cv2.imread('./ref_images/korallrev_etter.png')
+im = cv2.imread('./ref_images/bilde_mobil_2.jpg')
 kontur = tools.lilla_contour(im)  # Bare lilla områder
 # plt.figure()
 # plt.imshow(kontur)
+# Kommentert ut alt utenom plt.show
 roi_coords, biggest_cont_2 = tools.biggest_contour_roi(kontur)  # Korallrev bounding box
 # plt.figure()
 # plt.imshow(only_contour)
@@ -41,8 +42,8 @@ prep_img_etr = cv2.resize(roi, SHAPE, interpolation=cv2.INTER_AREA)
 
 templates = [
     tools.make_template('./templates/MT_1.jpg', 0.8),
-    tools.make_template('./templates/MT_2.jpg', 0.9),
-    tools.make_template('./templates/MT_3.jpg', 0.9)
+    tools.make_template('./templates/MT_2.jpg', 0.8),
+    tools.make_template('./templates/MT_3.jpg', 0.8)
 ]
 
 # tmp1.show()
