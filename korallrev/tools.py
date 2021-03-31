@@ -49,7 +49,7 @@ class ObjectTotal:
         return image
     
     def show(self, with_bokses=False, kontur=False):
-        plt.figure()
+        # plt.figure()
         if with_bokses:
             plt.imshow(self.with_bokses)
         elif kontur:
@@ -65,11 +65,16 @@ class Template:
         self.image = image
         self.matching_threshold = matching_threshold
         self.height, self.width, self.depth = self.image.shape
-        self.image_contour = None
 
     def show(self):
-        plt.figure()
+        # plt.figure()
         plt.imshow(self.image)
+
+
+def make_template(path, similarity_thresh):
+    template = cv2.imread(path)
+    template = Template(template, similarity_thresh)
+    return template
 
 
 class ObjectPart:
@@ -101,9 +106,9 @@ class ObjectPart:
         else:  # new no
             self.col = (255, 255, 0)  # death, yellow
         if self.hld:  #
-            self.col = (255, 0, 0)  # recover, blue
+            self.col = (0, 0, 255)  # recover, blue
         if self.blc:  # wht yes
-            self.col = (0, 0, 255)  # bleaching, red
+            self.col = (255, 0, 0)  # bleaching, red
         return True
 
     def __str__(self):
@@ -224,9 +229,15 @@ def find_non_overlap(objects_before, objects_after, non_max_suppression_threshol
 
 
 def is_area_white(roi):
+    # finner lilla, og gjør om til svart
+    # frame =
+    # res = cv2.cvtColor(frame, cv2.COLOR_GRAY2RGB)
+    # cv2.drawContours(res, cont, -1, (0, 0, 0), 5)
     roi = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
-    general_pixel_intensity = cv2.mean(roi)
-    if general_pixel_intensity[2] > 155:
+    kontur = lilla_contour(roi)
+    general_pixel_intensity = cv2.mean(kontur)
+    print(general_pixel_intensity)
+    if general_pixel_intensity[0] < 20:
         result = True
     else:
         result = False
@@ -245,6 +256,7 @@ def check_white_parts(im_bef, im_aft, list_of_parts):
             if b and not a:
                 part_.blc = True
     return True
+
 
 
 if __name__ == '__main__':

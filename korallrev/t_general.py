@@ -34,25 +34,31 @@ prep_img_etr = cv2.resize(roi, SHAPE, interpolation=cv2.INTER_AREA)
 # plt.imshow(prep_img)
 
 
-# kont2 = tmpl.lilla_contour(prep_img)
+# kont2 = tools.lilla_contour(prep_img_etr)
 # plt.figure()
 # plt.imshow(kont2)
-# cv2.imwrite('templates/cuttbar.jpg', kont2)
+# cv2.imwrite('templates/cuttbar2.jpg', kont2)
 
-tmp1 = cv2.imread('./templates/6.jpg')
-tmp1 = tools.Template(tmp1, 0.5)
+templates = [
+    tools.make_template('./templates/MT_1.jpg', 0.8),
+    tools.make_template('./templates/MT_2.jpg', 0.9),
+    tools.make_template('./templates/MT_3.jpg', 0.9)
+]
+
 # tmp1.show()
 
 kfor = tools.ObjectTotal(prep_img_for)
 # kfor.show(kontur=True)
-bfor = kfor.template_match([tmp1], filter_threshold=0.1)
+bfor = kfor.template_match(templates, filter_threshold=0.1)
 kfor_bokses = kfor.draw_rectangles(bfor)
+plt.subplot(131)
 kfor.show(with_bokses=True)
 
 ketr = tools.ObjectTotal(prep_img_etr)
 # ketr.show(kontur=True)
-betr = ketr.template_match([tmp1], filter_threshold=0.1)
+betr = ketr.template_match(templates, filter_threshold=0.1)
 ketr_bokses = ketr.draw_rectangles(betr)
+plt.subplot(132)
 ketr.show(with_bokses=True)
 
 diff_bokses = tools.find_non_overlap(bfor, betr)
@@ -63,7 +69,9 @@ for part in diff_bokses:
     part.set_color()
 
 diff_etr = ketr.draw_rectangles(diff_bokses)
-plt.figure()
+
+# plt.figure()
+plt.subplot(133)
 plt.imshow(diff_etr)
 
 plt.show()
