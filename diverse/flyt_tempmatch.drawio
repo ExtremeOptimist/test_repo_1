@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-03-23T07:27:17.248Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="n9FQx3DhEqFgY3DgvIH7" version="14.5.0" type="github">
+<mxfile host="app.diagrams.net" modified="2021-04-06T11:06:59.561Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36" etag="VGsP3ljKjrzc8-pbH5Qx" version="14.5.7" type="github">
   <diagram id="ZGgq6k-ltOVmovlfIZoH" name="Page-1">
-    <mxGraphModel dx="3076" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3076" dy="705" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -397,13 +397,13 @@
         <mxCell id="OI-lx5I4sna6sdSm4W62-14" value="draw_bokses(unique_bokses)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry y="962" width="209.75" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="bg9UeKD65mbcMoR0EMQl-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jZJCopuJqyTrzO6uzVs6-5" target="jZJCopuJqyTrzO6uzVs6-9">
+        <mxCell id="bg9UeKD65mbcMoR0EMQl-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jZJCopuJqyTrzO6uzVs6-5" target="jZJCopuJqyTrzO6uzVs6-9" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="jZJCopuJqyTrzO6uzVs6-5" value="Legger til malbilder" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="-269.75" y="1151.88" width="219.75" height="42.31" as="geometry" />
         </mxCell>
-        <mxCell id="bg9UeKD65mbcMoR0EMQl-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jZJCopuJqyTrzO6uzVs6-7" target="jZJCopuJqyTrzO6uzVs6-15">
+        <mxCell id="bg9UeKD65mbcMoR0EMQl-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jZJCopuJqyTrzO6uzVs6-7" target="jZJCopuJqyTrzO6uzVs6-15" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="jZJCopuJqyTrzO6uzVs6-7" value="Hent ut bokser fra korallrev før, ved hjelp av malbilder&lt;br&gt;&lt;i&gt;get_bokses()&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
@@ -427,12 +427,12 @@
         <mxCell id="jZJCopuJqyTrzO6uzVs6-13" value="Henter ut bokser, korallrev etter&lt;br&gt;&lt;i&gt;get_bokses()&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="284.5" y="1253" width="209.75" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="bg9UeKD65mbcMoR0EMQl-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="jZJCopuJqyTrzO6uzVs6-15" target="jZJCopuJqyTrzO6uzVs6-11">
+        <mxCell id="bg9UeKD65mbcMoR0EMQl-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="jZJCopuJqyTrzO6uzVs6-15" target="jZJCopuJqyTrzO6uzVs6-11" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="790" y="1173" />
-              <mxPoint x="790" y="1220" />
-              <mxPoint x="-40" y="1220" />
+              <mxPoint x="790" y="1240" />
+              <mxPoint x="-40" y="1240" />
               <mxPoint x="-40" y="1269" />
             </Array>
           </mxGeometry>
@@ -597,6 +597,24 @@
         </mxCell>
         <mxCell id="zkq6lEYMFF8dXpd6zRt_-10" value="Kan skrive hva metodene kalles i teksten?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="-289.75" y="1470" width="240" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IWKwJVLJ-vLeymq-0amj-1" value="a)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fontStyle=1;fontFamily=Tahoma;" vertex="1" parent="1">
+          <mxGeometry x="-250" y="1200" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IWKwJVLJ-vLeymq-0amj-2" value="b)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fontStyle=1;fontFamily=Tahoma;" vertex="1" parent="1">
+          <mxGeometry y="1200" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IWKwJVLJ-vLeymq-0amj-3" value="c)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fontStyle=1;fontFamily=Tahoma;" vertex="1" parent="1">
+          <mxGeometry x="275.25" y="1200" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IWKwJVLJ-vLeymq-0amj-4" value="d)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fontStyle=1;fontFamily=Tahoma;" vertex="1" parent="1">
+          <mxGeometry x="550.5" y="1200" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IWKwJVLJ-vLeymq-0amj-5" value="e)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fontStyle=1;fontFamily=Tahoma;" vertex="1" parent="1">
+          <mxGeometry x="-250" y="1320" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IWKwJVLJ-vLeymq-0amj-6" value="f)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fontStyle=1;fontFamily=Tahoma;" vertex="1" parent="1">
+          <mxGeometry y="1320" width="30" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
