@@ -20,9 +20,9 @@ class ObjectTotal:
             part_.new = False
         return
 
-    def template_match(self, templates, filter_threshold=0.1):
+    def get_bokses(self, templates, filter_threshold=0.1):
         # Tar inn en eller flere templates
-        gray = lilla_contour(self.image)
+        unused, gray = lilla_contour(self.image)
         for template_ in templates:
             tmplgray = cv2.cvtColor(template_.image, cv2.COLOR_BGR2GRAY)
             match = cv2.matchTemplate(gray, tmplgray, cv2.TM_CCOEFF_NORMED)
@@ -54,7 +54,7 @@ class ObjectTotal:
         if with_bokses:
             plt.imshow(self.with_bokses)
         elif kontur:
-            gray = lilla_contour(self.image)
+            unused, gray = lilla_contour(self.image)
             plt.imshow(gray)
         else:
             plt.imshow(self.image)
@@ -105,11 +105,11 @@ class ObjectPart:
         if self.new:  # new yes
             self.col = (0, 255, 0)  # growth, green
         else:  # new no
-            self.col = (255, 255, 0)  # death, yellow
+            self.col = (0, 255, 255)  # death, yellow
         if self.hld:  #
-            self.col = (0, 0, 255)  # recover, blue
+            self.col = (255, 0, 0)  # recover, blue
         if self.blc:  # wht yes
-            self.col = (255, 0, 0)  # bleaching, red
+            self.col = (0, 0, 255)  # bleaching, red
         return True
 
     def __str__(self):
@@ -132,14 +132,27 @@ def lilla_contour(img):
     res = cv2.bitwise_and(img, img, mask=mask)
     bare_h_lag = res[:, :, 0]
     ret, contour_med_stoy = cv2.threshold(bare_h_lag, 30, 250, cv2.THRESH_BINARY)
-    return contour_med_stoy
+
+    contours, hir = cv2.findContours(contour_med_stoy, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    cntsSorted = sorted(contours, key=lambda x: cv2.contourArea(x), reverse=True)
+    cnt1 = cntsSorted[:5]  # Tar de 6 første konturene, som skal være de seks største
+    blank = np.zeros(bare_h_lag.shape)
+    only_contour = cv2.drawContours(blank, cnt1, -1, 255, -1)
+    only_contour = np.uint8(only_contour)
+    #
+    # print(only_contour)
+    # print(contour_med_stoy)
+    return contour_med_stoy, only_contour
 
 
 def biggest_contour_roi(gray_img):
+    # plt.figure()
+    # plt.imshow(gray_img)
+    # plt.show()
     contours, hierarchy = cv2.findContours(gray_img, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     biggest_cont = max(contours, key=cv2.contourArea)
     bounding_rect = cv2.boundingRect(biggest_cont)
-    return bounding_rect, biggest_cont
+    return bounding_rect, biggest_cont, contours
 
 
 def crop_image(image, rectangle_coords):
@@ -238,14 +251,17 @@ def is_area_white(roi):
     # frame =
     # res = cv2.cvtColor(frame, cv2.COLOR_GRAY2RGB)
     # cv2.drawContours(res, cont, -1, (0, 0, 0), 5)
-    roi = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
-    kontur = lilla_contour(roi)
+    # roi = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
+    unused, kontur = lilla_contour(roi)
     general_pixel_intensity = cv2.mean(kontur)
     print(general_pixel_intensity)
     if general_pixel_intensity[0] < 20:
         result = True
     else:
         result = False
+    # plt.figure()
+    # plt.imshow(kontur)
+    # plt.show()
     return result
 
 
@@ -263,17 +279,86 @@ def check_white_parts(im_bef, im_aft, list_of_parts):
     return True
 
 
+def prep_image(path, shape):
+    # Tilpass bilde før. (kan gjøres til funksjon)
+    # im = cv2.imread('./korallrev/ref_images/mob_etter.jpg')
+    im = cv2.imread(path)
+    kontur, unused = lilla_contour(im)  # Bare lilla områder
+    # plt.figure()
+    # plt.imshow(im)
+    roi_coords, biggest_cont_, counts = biggest_contour_roi(kontur)  # Korallrev bounding box
+    # plt.figure()
+    # plt.imshow(only_contour)
+    roi = crop_image(im, roi_coords)  # klippet ut
+    prep_img = cv2.resize(roi, shape, interpolation=cv2.INTER_AREA)
+    # plt.figure()
+    # plt.imshow(prep_img)
+
+    # cntsSorted = sorted(contours, key=lambda x: cv2.contourArea(x), reverse=True)
+    # cnt1 = cntsSorted[:5]  # Tar de 6 første konturene, som skal være de seks største
+    # blank = np.zeros(bare_h_lag.shape)
+    # only_contour = cv2.drawContours(blank, cnt1, -1, 255, -1)
+    return prep_img
+
+
+def extract_color(image, hue=(121, 177), crop=True):
+    # Returnerer et gråskala bilde av contour til spesifisert farge (hsv) fra et et bilde
+    # 145 til 170 har jeg funnet ut at stemmer godt med lilla for korallrevet
+    blob_size = 5
+    img_hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+    color_low = np.array([hue[0], 60, 50])
+    color_high = np.array([hue[1], 200, 221])
+    mask = cv2.inRange(img_hsv, color_low, color_high)  # lager maske
+    res = cv2.bitwise_and(image, image, mask=mask)  # Bildet som representerer fargen i korallrevet
+    # koden over, bitwise and brukes for å sortere ut de lilla pikslene som vi er interreserte i.
+    res = cv2.cvtColor(res, cv2.COLOR_HSV2BGR)  # Gjør til BGR
+    res = cv2.cvtColor(res, cv2.COLOR_BGR2GRAY)  # Gjør til gråskala
+    kernel = np.ones((blob_size, blob_size), np.uint8)
+    retur_img = cv2.morphologyEx(res, cv2.MORPH_CLOSE, kernel)
+    ret, res = cv2.threshold(retur_img, 90, 250, cv2.THRESH_BINARY)
+    contours, hir = cv2.findContours(res, 1, 2)
+    biggest_cont = max(contours, key=cv2.contourArea)
+    x, y, w, h = cv2.boundingRect(biggest_cont)
+    if crop:
+        img_cropped = image[y:y + h, x:x + w]
+        contour_cropped = res[y:y + h, x:x + w]
+    else:
+        img_cropped = image
+        contour_cropped = res
+    """Midlertidig for test"""
+    plt.subplot(121)
+    plt.imshow(contour_cropped)
+    plt.subplot(122)
+    plt.imshow(img_cropped)
+    plt.show()
+    # --------------------
+    return contour_cropped, img_cropped
+
 
 if __name__ == '__main__':
-    templater = [Template('./korallrev/templates/5.jpg', 0.65)]
-    # img1 = cv2.imread('mob_for.jpg.png')
-    # img2 = cv2.imread('mob_etter.jpg.jpg')
-    kfor = ObjectTotal('./korallrev/ref_images/korallrev_for.PNG')
-    # kfor.set_contour()  # setter contouren til formen av korallrevet
-    # matcher templates og filtrere overlapp, returnerer en liste med deler.
-    bokser_for = kfor.template_match(templater, 0.01)
-    for_med_rektangler = kfor.draw_rectangles(bokser_for)  # returnerer objektbildet med valgte deler
+    prep_img_for = prep_image('./ref_images/mob_etter.jpg', shape=(400, 400))
+    img = prep_img_for
+    hue = (155, 179)
+    img_hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    color_low = np.array([hue[0], 60, 90])  # bra for MATE
+    color_high = np.array([hue[1], 200, 221])  # bra for MATE
+    mask = cv2.inRange(img_hsv, color_low, color_high)
+    res = cv2.bitwise_and(img, img, mask=mask)
+    bare_h_lag = res[:, :, 0]
+    ret, contour_med_stoy = cv2.threshold(bare_h_lag, 30, 250, cv2.THRESH_BINARY)
 
+    contours, hir = cv2.findContours(contour_med_stoy, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    cntsSorted = sorted(contours, key=lambda x: cv2.contourArea(x), reverse=True)
+    cnt1 = cntsSorted[:6]  # Tar de 6 første konturene, som skal være de seks største
+    blank = np.zeros(bare_h_lag.shape)
+    only_contour = cv2.drawContours(blank, cnt1, -1, 255, -1)
+    # plt.figure()
+    # plt.imshow(only_contour)
+    # only_contour = cv2.drawContours(blank, [cnt2], -1, 255, -1)
     plt.figure()
-    plt.imshow(for_med_rektangler)
+    plt.imshow(only_contour)
+    # print(cntsSorted)
+
+    # prøv å hiv in dette i lilla kontur
+
     plt.show()
