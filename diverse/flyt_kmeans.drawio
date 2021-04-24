@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-04-24T10:59:51.490Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36" etag="KBGvnifN4IOHOD7D9yCk" version="14.6.6" type="github">
+<mxfile host="app.diagrams.net" modified="2021-04-24T11:24:31.576Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36" etag="RQjk9-gzRTaT-S5iHdPL" version="14.6.6" type="github">
   <diagram id="ZGgq6k-ltOVmovlfIZoH" name="Page-1">
-    <mxGraphModel dx="3327" dy="896" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3685" dy="1089" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -224,7 +224,7 @@
           <mxGeometry x="-525.25" y="830" width="209.75" height="50" as="geometry" />
         </mxCell>
         <mxCell id="GfadqTVx7JrLC5rxwEHc-2" value="&lt;font style=&quot;font-size: 19px&quot;&gt;Hent grener&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
-          <mxGeometry y="542.5" width="120" height="20" as="geometry" />
+          <mxGeometry x="40.78" y="23.5" width="120" height="20" as="geometry" />
         </mxCell>
         <mxCell id="GfadqTVx7JrLC5rxwEHc-4" value="Bruk kmeans" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="-289.5" y="678" width="209.75" height="32" as="geometry" />
@@ -233,7 +233,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="GfadqTVx7JrLC5rxwEHc-5" value="&lt;font style=&quot;font-size: 12px&quot;&gt;Hent lilla kontur:&lt;br&gt;&lt;i&gt;prep_image(image),&lt;br&gt;lilla_contour(image&lt;/i&gt;)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="-0.6200000000000045" y="721" width="209.75" height="50" as="geometry" />
+          <mxGeometry x="40.16" y="202" width="209.75" height="50" as="geometry" />
         </mxCell>
         <mxCell id="GfadqTVx7JrLC5rxwEHc-6" value="Kategoriser grener" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="-279" y="970" width="209.75" height="32" as="geometry" />
@@ -242,22 +242,22 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="GfadqTVx7JrLC5rxwEHc-7" value="&lt;font style=&quot;font-size: 12px&quot;&gt;Bind sammen punkter:&lt;br&gt;&lt;i&gt;get_graph(k-points)&lt;/i&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="-0.6200000000000045" y="957" width="209.75" height="40" as="geometry" />
+          <mxGeometry x="40.16" y="438" width="209.75" height="40" as="geometry" />
         </mxCell>
         <mxCell id="nCTSz_TvgPSFQkZiOh1V-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GfadqTVx7JrLC5rxwEHc-8" target="qxotbGVb0qHCGpcW_QqC-3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="GfadqTVx7JrLC5rxwEHc-8" value="&lt;font style=&quot;font-size: 12px&quot;&gt;Finn nøkkelpunkter:&lt;br&gt;&lt;i&gt;get_keypoints(verticies, k-points)&lt;/i&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="-0.6200000000000045" y="1073" width="209.75" height="40" as="geometry" />
+          <mxGeometry x="40.16" y="554" width="209.75" height="40" as="geometry" />
         </mxCell>
         <mxCell id="GfadqTVx7JrLC5rxwEHc-9" value="Returner grener" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="23.744999999999994" y="1300" width="161" height="49" as="geometry" />
+          <mxGeometry x="64.52499999999999" y="781" width="161" height="49" as="geometry" />
         </mxCell>
         <mxCell id="nCTSz_TvgPSFQkZiOh1V-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GfadqTVx7JrLC5rxwEHc-21" target="GfadqTVx7JrLC5rxwEHc-5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="GfadqTVx7JrLC5rxwEHc-21" value="&lt;font style=&quot;font-size: 12px&quot;&gt;Hent grener&lt;br&gt;&lt;i&gt;get_branches(image)&lt;/i&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=1;strokeColor=#82b366;fillColor=#d5e8d4;" parent="1" vertex="1">
-          <mxGeometry x="-0.7450000000000045" y="610" width="210" height="40" as="geometry" />
+          <mxGeometry x="40.035" y="91" width="210" height="40" as="geometry" />
         </mxCell>
         <mxCell id="mvIJX-KpWmDswBtfVDwT-1" value="&lt;font style=&quot;font-size: 19px&quot;&gt;Sammenlign grener&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="495.12" y="542.5" width="180" height="20" as="geometry" />
@@ -296,13 +296,13 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="qxotbGVb0qHCGpcW_QqC-1" value="&lt;font style=&quot;font-size: 12px&quot;&gt;Gjør om til punkter:&lt;br&gt;&lt;i&gt;pixels_to_points(image),&lt;br&gt;get_kmeans_centers(points, nr_of_clusters)&lt;/i&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="-18.215000000000003" y="837" width="244.94" height="50" as="geometry" />
+          <mxGeometry x="22.564999999999998" y="318" width="244.94" height="50" as="geometry" />
         </mxCell>
         <mxCell id="nCTSz_TvgPSFQkZiOh1V-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qxotbGVb0qHCGpcW_QqC-3" target="GfadqTVx7JrLC5rxwEHc-9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="qxotbGVb0qHCGpcW_QqC-3" value="&lt;font style=&quot;font-size: 12px&quot;&gt;Lag og kategoriser grener:&lt;br&gt;&lt;i&gt;make_branches(verticies),&lt;/i&gt;&lt;br&gt;&lt;i&gt;categorize_branches(branches, verticies)&lt;/i&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="-11.055000000000007" y="1184" width="230.62" height="50" as="geometry" />
+          <mxGeometry x="29.724999999999994" y="665" width="230.62" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
